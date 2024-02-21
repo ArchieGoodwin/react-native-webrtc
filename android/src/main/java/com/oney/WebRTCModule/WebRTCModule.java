@@ -81,8 +81,8 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
             EglBase.Context eglContext = EglUtils.getRootEglBaseContext();
 
             if (eglContext != null) {
-                encoderFactory = new H264AndSoftwareVideoEncoderFactory(eglContext);
-                decoderFactory = new H264AndSoftwareVideoDecoderFactory(eglContext);
+                encoderFactory = new SoftwareVideoEncoderFactory();
+                decoderFactory = new SoftwareVideoDecoderFactory();
             } else {
                 encoderFactory = new SoftwareVideoEncoderFactory();
                 decoderFactory = new SoftwareVideoDecoderFactory();
